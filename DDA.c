@@ -1,29 +1,20 @@
-// DDA algorithm to draw a line.
-
-// Including preprocessor directives.
 #include <stdio.h>
 #include <graphics.h>
 #include <math.h>
 
-// Declaring main function.
 int main(int argc, char const *argv[])
 {
-	// Declaring variables.
 	int x1,y1,x2,y2,dx,dy,steps;
 
-	// Asking for initial point.
 	printf("Enter the initial point\n");
 	scanf("%d %d",&x1,&y1);
 
-	// Asking for final point.
 	printf("Enter the final point\n");
 	scanf("%d %d",&x2,&y2);
 
-	// Calculating the differences between initial and final points.
 	dx=abs(x2-x1);
 	dy=abs(y2-y1);
 
-	// Determining the number of steps.
 	if (dx>=dy)
 	{
 		steps=dx;
@@ -33,17 +24,14 @@ int main(int argc, char const *argv[])
 		steps=dy;
 	}
 
-	// Determining the increment per step.
 	dy/=steps;
 	dx/=steps;
 
-	// Initializing graphics variables.
-	int gd=DETECT,gm;
+	//int gd=DETECT,gm,left=100,top=100,right=200,bottom=200,x= 300,y=150,radius=50;
 
-	// Initializing graphics.
-	initgraph(&gd,&gm,NULL);
+	//initgraph(&gd,&gm,NULL);
+    initwindow(400, 300);
 
-	// Drawing individual pixels in a loop.
 	for (int i = 0; i < steps; i++)
 	{
 		putpixel(x1,y1,5);
@@ -52,8 +40,7 @@ int main(int argc, char const *argv[])
 		delay(100);
 	}
 
-	// Concluding the program.
-	delay(1000);
+	delay(10000);
 	closegraph();
 	return 0;
 }

@@ -1,32 +1,25 @@
-// Including PreProcessor directives
 #include <stdio.h>
 #include <graphics.h>
 
-// Main Function
 int main()
 {
-	// Declaring the variables
 	float x1,y1,radius,p,x,y;
 
-	// Asking for the inputs from the user
 	printf("Enter the co-ordinates of center of the circle\n");
 	scanf("%f %f",&x1,&y1);
 	
-	// Enter the radius of the circle
 	printf("Enter the radius of the center of the circle\n");
 	scanf("%f",&radius);
 
-	// Calculating the initial point and p0
 	x=0;
 	y=radius;
 	p=1-radius;
 
-	// Initialize the graphics
-	int gd=DETECT,gm;
-	initgraph(&gd,&gm,NULL);
+	//int gd=DETECT,gm;
+	//initgraph(&gd,&gm,NULL);
+    initwindow(500, 400);
 	putpixel(x+x1,y+y1,7);
 
-	// By Mid-point of the circle algorithm
 	while (x <= y)
 	{
 		if (p < 0)
@@ -59,8 +52,7 @@ int main()
 		}
 	}
 	
-	// Concluding the program
-	delay(2000);
+	delay(10000);
 	closegraph();
 	return 0;
 }
